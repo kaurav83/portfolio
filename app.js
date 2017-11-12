@@ -24,15 +24,9 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
-  useMongoClient: true,
-  user: config.db.user,
-  pass: config.db.password
-})
-.catch(e => {
-  console.error(e);
-  throw e;
-});
+const dev_db_url = 'mongodb://scaffold83:80963319476@ds123695.mlab.com:23695/local_library'
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
+mongoose.connect(mongoDB);
 
 //подключаем модели(сущности, описывающие коллекции базы данных)
 require('./models/db-close');
@@ -41,9 +35,7 @@ require('./models/pic');
 require('./models/user');
 
 const dbHandler = mongoose.connection;
-dbHandler.on('error', function(err) {
-  console.log('connection error: ', err.message);
-});
+dbHandler.on('error', console.error.bind(console, 'MongoDB connection error'));
 
 dbHandler.once('open', function callback () {
   console.log("Connected to DB!");
