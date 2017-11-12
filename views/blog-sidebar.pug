@@ -1,0 +1,10 @@
+extends blog-container
+
+block sidebar
+    h2=title1
+    .sidebar.sidebar--desktop
+            .sidebar__container
+                ul.sidebar__list
+                    each item, index in items
+                        li.sidebar__item
+                            a(href=`blog/post/${item._id}`).sidebar__link=item.title

@@ -1,0 +1,38 @@
+.triangle {
+    height: 6.25rem;
+    width: 100%;
+
+    @include tablets {
+      display: none;
+    }
+  
+    &__fill {
+  
+      &--white {
+        fill: #a0bbce;
+      }
+      &--bege {
+          fill: #75b5d9;
+      }
+    //   &_beige {
+    //     fill: $beige;
+    //   }
+  
+    }
+}
+
+.triangle-tablets {
+  &--bege {
+    fill: $main-color-bg2;;
+  }
+  position: absolute;
+  bottom: calc(100% - .05rem);
+  fill: #a0bbce;
+  @include tabletsMin {
+    display: none;
+  }
+
+  @include tablets {
+    display: block;
+  }
+}

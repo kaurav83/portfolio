@@ -1,0 +1,13 @@
+extends ./main-layout
+
+block title 
+        | Post
+    
+block content
+    - var data = new Date(item.date).toLocaleDateString('ru', { year: 'numeric', month: '2-digit', day: '2-digit'})
+
+    li.article
+        h2.article__title= item.title
+        p.article__data= data
+        p.article__text= item.body
+//- extends ./blog-container.pug

@@ -1,0 +1,99 @@
+.hero {
+    height: 37.5rem;
+    overflow: hidden;
+    position: relative;
+
+    @include tablets {
+        height: 30.5rem;
+    }
+
+    @include phones {
+        height: 100vh;
+    }
+
+    &__title {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+    &__title-pic {
+        width: 62%;
+    }
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: translateY(0);
+        img {
+            width: 100vw;
+            // max-width: 1900px;
+            min-height: 62.5rem;
+            background-position: center center;
+            background-size: cover;
+            @include tablets {
+                display: none;
+            }
+        }
+
+        @include tablets {
+            & {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                background-image: url('../img/bg/heroPortfolio2.jpg');
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                height: 40rem;
+            }
+        }
+
+        @include phones {
+            & {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                background-image: url('../img/bg/heroPortfolio2.jpg');
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                height: 100vh;
+                transform: translateY(0);
+            }
+        }
+    }
+    &__user-block {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__top-line {
+        position: absolute;
+        z-index: 200;
+        justify-content: space-between;
+        display: flex;
+        top: 1.875rem;
+        left: 0;
+        width: 100%;
+        align-items: center;
+
+        // @include tablets {
+        //     display: none;
+        // }
+    }
+}
+
+.navigation {
+    margin: 0 10%;
+    
+    @include tablets {
+        display: none;
+    }
+}

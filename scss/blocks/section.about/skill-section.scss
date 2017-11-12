@@ -1,0 +1,25 @@
+.skills-section {
+    &__list {
+        display: flex;
+        margin-top: .5rem;
+        flex-wrap: wrap;
+
+        @include  tablets {
+            justify-content: center;
+        }
+    }
+    &__item {
+        margin: 0 .7em;
+    }
+    &__title {
+        font-size: 1.75rem;
+        color: #5d5a55;
+        font-family: $medium-font-family1;
+
+        @include tablets {
+            text-align: center;
+            width: 100%;
+            font-size: 1.4rem;
+        }
+    }
+}

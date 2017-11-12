@@ -1,0 +1,71 @@
+.socials {
+    margin: 0 10%;
+    display: flex;
+    @include tablets {
+        margin: 0 auto;
+        justify-content: center;
+    }
+    &__item {
+        // background: red;
+        margin-left: 1.8em;
+    }
+    &__item:first-child {
+        margin-left: 0;
+    }
+    &__link {
+        display: block;
+        color: #fff;
+        opacity: .8;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    
+    &__link--vk {
+        &:before {
+            content: "\f189";
+            font-family: FontAwesome;
+            font-size: 1.875rem;
+
+            @include tablets {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    &__link--gh {
+        &:before {
+            content: "\f113";
+            font-family: FontAwesome;
+            font-size: 1.875rem;
+
+            @include tablets {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &__link--in {
+        &:before {
+            content: "\f0e1";
+            font-family: FontAwesome;
+            font-size: 1.875rem;
+            color: $main-color-bg2;
+
+            @include tablets {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &--desktop {
+        @include tablets {
+            display: none;
+        }
+    }
+
+    &--mobile {
+        @include tabletsMin {
+            display: flex;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.user {
+    &__photo {
+        // border-radius: 50px;
+    }
+    &__photo-avatar {
+        // transform: rotate(45deg);
+        overflow: hidden;
+        width: 9.1875rem;
+        height: 9.1875rem;
+        display: inline-block;
+        border-radius: 100%;
+
+        @include phones {
+            width: 6rem;
+            height: 6rem;
+        }
+    }
+    &__photo-img {
+        display: block;
+        max-width: 100%;
+        // transform: rotate(-45deg);
+    }
+    &__name {
+        font-family: $medium-font-family5;
+        font-size: 2.1875em;
+        // color: #CCC389;
+        margin-top: .625rem;
+        color: #fff;
+        opacity: .7;
+
+        @include phones {
+            font-size: 1.4rem;
+            margin-top: .310rem;
+        }
+    }
+
+    &__desc {
+        font-family: $regular-font-family1;
+        font-size: 1rem; 
+        // color: #CCC389;
+        color: #fff;
+        opacity: .7;
+
+        @include phones {
+            font-size: .8rem;
+        }
+    }
+}

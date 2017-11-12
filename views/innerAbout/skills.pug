@@ -1,0 +1,39 @@
+ul.skills
+    - var frontend = 'Frontend'
+    li.skills__item
+        .skills-section
+             .skills-section__title= frontend
+             ul.skills-section__list
+                each skillName in ['HTML5', 'CSS3', 'JavaScript', 'Angular']
+                    li.skills-section__item
+                        .skill
+                            svg.skill__circle
+                                circle(cx="50" cy="50" r="40").skills__circle-under
+                                circle(cx="50" cy="50" r="40").skills__circle-above
+                            .skill__name= skillName
+
+    - var backend = 'Backend'
+    li.skills__item
+        .skills-section
+             .skills-section__title= backend
+             ul.skills-section__list
+                each skillName in ['KeystoneJS', 'Express.js', 'Node.js & npm', 'Mongo.db']
+                    li.skills-section__item
+                        .skill
+                            svg.skill__circle
+                                circle(cx="50" cy="50" r="40").skills__circle-under
+                                circle(cx="50" cy="50" r="40").skills__circle-above
+                            .skill__name= skillName
+
+    - var workflow = 'WorkFlow'
+    li.skills__item
+        .skills-section
+             .skills-section__title= workflow
+             ul.skills-section__list
+                each skillName in ['Git', 'Gulp', 'WebPack', 'Bower']
+                    li.skills-section__item
+                        .skill
+                            svg.skill__circle
+                                circle(cx="50" cy="50" r="40").skills__circle-under
+                                circle(cx="50" cy="50" r="40").skills__circle-above
+                            .skill__name= skillName

@@ -1,0 +1,38 @@
+.map {
+    position: relative;
+    &__background {
+        background-image: url('../img/bg/map.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 60.8125rem;
+        position: relative;
+
+        @include desktop {
+            height: 55rem;
+        }
+
+        @include  laptop {
+            height: 50rem;
+        }
+
+        @include  tablets {
+            height: 40rem;
+        }
+    }
+    
+    &__feedback {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+        background: rgba(255, 255, 255, .85);
+        z-index: 100;
+        border-radius: .5rem;
+
+        @include  phones {
+            transform: translate(-50%, -100%);
+            top: 40%;
+        }
+    }
+}

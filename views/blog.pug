@@ -1,0 +1,11 @@
+extends ./main-layout
+
+block title
+    | Блог
+
+block content
+    +preloader
+    include ./header
+    include ./parts/blog-triangle
+    include ./blog-container
+    include ./parts/footer-other

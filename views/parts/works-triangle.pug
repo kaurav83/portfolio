@@ -1,0 +1,41 @@
+section.section.works
+    .works__top
+        .works__top-biggest
+            svg(
+                viewbox="0 0 1000 100" 
+                preserveAspectRatio="none"
+                class="triangle works__triangle-fill--white works__triangles"
+                )
+                polygon(points="0,100 495,0 1000,100")
+            svg(
+                viewbox="0 0 1000 100" 
+                preserveAspectRatio="none"
+                class="triangle works__triangle-fill--bege works__triangles"
+                )
+                polygon(points="0,100 515,0 1000,100")
+            .work__title
+                +title('Мои работы', 'works-header.png', 'works__section-title')
+        .works__top-desktop
+            svg(
+                viewbox="0 0 1000 100" 
+                preserveAspectRatio="none"
+                class="triangle works__triangle-fill--white works__triangles"
+                )
+                polygon(points="0,0 0,110 1000, 100")
+            svg(
+                viewbox="0 0 1000 100" 
+                preserveAspectRatio="none"
+                class="triangle works__triangle-fill--bege works__triangles"
+                )
+                polygon(points="0,100 1000,100 1000,0")
+            .work__title
+                +title('Мои работы', 'works-header.png', 'works__section-title')
+        .works__top-tablets
+            svg(
+                viewbox="0 0 1000 100"
+                preserveAspectRatio="none"
+                class="triangle-tablets triangle-tablets--bege"
+                )
+                polygon(points="0,100 495,0 1000,100")
+            .work__title
+                +title('Мои работы', 'works-header.png', 'works__section-title')

@@ -1,0 +1,46 @@
+extends ./main-layout
+
+block title
+    | Авторизация
+
+block content
+    +preloader
+    
+    .login-wrapper
+        img.login-wrapper__img(src="img/bg/heroPortfolio2.jpg")
+        .login
+            .login__subtitle-wrapper
+                h2.login__subtitle.subtitle
+                    | Авторизуйтесь
+                    +subtitle
+            form(action="/login" method="POST" id="login")
+                .status
+                .login__field
+                    input(type="text" name="username" id="login-name" placeholder="Логин")
+                .login__field
+                    input(type="password" name="password" id="pass" placeholder="Пароль")
+                .login__checkbox
+                    input(type="checkbox" class="login__checkbox-checkbox" id="check" value="Я человек" checked="true")
+                    label.login__checkbox-check(for="check") 
+                    label.login__checkbox-label(for="check") Я человек 
+                p.login__verify-text
+                    | Вы точно не робот?
+                .login__verify
+                    input(type="radio" name="radio" id="yes" checked) 
+                    label(for="yes" class="radio-label") Да
+                    input(type="radio" name="radio" id="no") 
+                    label(for="no" class="radio-label") Нет
+                //- input(name="" type="submit" value="Войти")
+                //- input(name="" type="reset" value="Очистить")
+                //- button.btn.btn-default(type='submit') Submit
+                ul.login__list
+                    li.login__item
+                        input.login__link(type='submit' name="" value="Отправить") 
+                    li.login__item
+                        a(href='/')
+                            input.login__link(type="button" name="" value="На главную") 
+                    
+
+        .copyright
+            span &#169;  Виталий Пуга 
+            span  2017

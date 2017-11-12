@@ -1,0 +1,34 @@
+.hamburger {
+    position: relative;
+    z-index: 50; // top: 15px;
+    // left: 20px;
+    display: inline-block;
+    cursor: pointer;
+    top: 1rem;
+    left: 1rem;
+    transition: left 500ms cubic-bezier(.6, .05, .28, .91);
+    &__fragment {
+        width: 1.6875rem;
+        height: .15625rem;
+        background-color: #fff;
+        margin-bottom: .25rem;
+        transition: transform 500ms cubic-bezier(.6, .05, .28, .91), opacity 500ms, background-color 250ms;
+    }
+}
+
+#hamburger.active {
+    .hamburger {
+        &__fragment {
+            background-color: #fff;
+            &--top {
+                transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1);
+            }
+            &--middle {
+                opacity: 0;
+            }
+            &--bottom {
+                transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1);
+            }
+        }
+    }
+}

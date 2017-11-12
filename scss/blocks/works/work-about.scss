@@ -1,0 +1,101 @@
+.work-about {
+    background-image: url(../img/bg/bg-works.jpeg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    min-height: 43.75rem;
+    &__container {
+        width: 100%;
+    }
+    &__title-section {
+        text-align: center;
+        margin: 1.25rem 0;
+    }
+    &__title {
+        max-width: 40%;
+        @include phones {
+            max-width: 60%;
+        }
+        @include tablets {
+            max-width: 60%;
+        }
+    }
+
+
+    &__opinion-container {
+        padding: 0 10%;
+        margin: 3rem 0;
+    }
+    &__opinion-list {
+        display: flex;
+        // flex-wrap: wrap;
+        justify-content: center;
+
+        @include tablets {
+            flex-direction: column;
+        }
+    }
+    &__opinion-item {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 1rem;
+        padding: 0 1rem;
+        max-width: 40%;
+        align-items: center;
+        @include tablets {
+            flex-wrap: nowrap;
+            max-width: 100%;
+            align-items: flex-start;
+            flex-direction: column;
+            margin: 1rem 0;
+            padding: 0;
+        }
+    }
+    &__opinion-description {
+        margin-top: 1rem;
+        color: $title-color;
+        font-family: $regular-font-family1;
+        font-size: 1rem;
+    }
+    &__opinion-photo {
+        border-radius: 100%;
+
+        @include phones {
+            align-self: center;
+        }
+    }
+    &__opinion-status {
+        // align-self: flex-start;
+        // display: inline-flex;
+        // width: 100%;
+        // flex-direction: column;
+        // justify-content: flex-start;
+        
+    }
+    &__opinion-person {
+        margin-left: 1rem;
+        color: $title-color;
+        font-family: $regular-font-family1;
+        @include phones {
+            align-self: center;
+        }
+    }
+    &__opinion-name {
+        color: $title-color;
+        font-family: $regular-font-family1;
+    }
+
+    &__feedback-container {
+        color: #fff;
+    }
+
+    &__down-arrow {
+        text-align: center;
+        margin: 3rem 0;
+    }
+    &__down-arrow-link {
+        font-size: 3rem;
+        color: #fff;
+    }
+}

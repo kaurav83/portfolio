@@ -1,0 +1,26 @@
+mixin title(title, url, additionClass)
+    .title(style=`background-image: url('img/decor/${url}')` class=additionClass)= title
+
+mixin subtitle
+    .subtitle__wrapper.subtitle__wrapper--left
+        svg(width=".6em" height=".6em").subtitle__circle
+            circle(cx=10, cy=10, r="7")
+        svg(width=".5em" height=".5em").subtitle__circle
+            circle(cx=10, cy=10, r="4")
+    .subtitle__wrapper.subtitle__wrapper--right
+        svg(width=".6em" height=".6em").subtitle__circle
+            circle(cx=10, cy=10, r="7")
+        svg(width=".5em" height=".5em").subtitle__circle
+            circle(cx=6, cy=10, r="4")
+
+mixin preloader
+    #page-preloader.preloader
+        ul.preloader__animation
+            li.preloader__fragment
+            li.preloader__fragment
+            li.preloader__fragment
+            li.preloader__fragment
+            li.preloader__fragment
+        #persent.preloader__progress 0%
+
+

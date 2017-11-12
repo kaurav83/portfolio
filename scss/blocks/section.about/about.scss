@@ -1,0 +1,128 @@
+.about {
+    width: 100%;
+    &__wrapper {
+        display: flex;
+
+        @include tablets {
+            flex-direction: column;
+        }
+    }
+    &__left {
+        width: calc(100% / 2);
+        background-image: url(../img/bg/radialGradient.svg); // background-repeat: no-repeat;
+        // background-attachment: fixed;
+        background-size: 100%;
+        position: relative;
+        @include tablets {
+            width: 100%;
+        }
+        &--biggest {
+            @include desktop {
+                display: none;
+            }
+        }
+        &--desktop {
+            @include desktopMin {
+                display: none;
+            }
+        }
+        &--desktop {
+            @include desktop {
+                display: block;
+            }
+        }
+    }
+    &__right {
+        width: calc(100% / 2);
+        background-image: url(../img/bg/radialGradient2.svg);
+        // background-repeat: no-repeat;
+        // background-attachment: fixed;
+        background-size: 100%;
+        position: relative;
+        
+        @include tablets {
+            width: 100%;
+        }
+        
+        &--biggest {
+            @include desktop {
+                display: none;
+            }
+        }
+        &--desktop {
+            @include desktopMin {
+                display: none;
+            }
+        }
+        &--desktop {
+            @include desktop {
+                display: block;
+            }
+        }
+    }
+    &__triangles {
+        position: absolute;
+        bottom: calc(100% - 1px);
+    }
+    &__left-content {
+        padding: 0 10%;
+        text-align: center;
+
+        @include phones {
+            padding: 0 5%;
+            width: 100%;
+        }
+    }
+    &__photo-container {
+
+    }
+    &__photo {
+        width: 50%;
+        min-width: 10em;
+        margin-bottom: 1.5rem;
+        @include phones {
+            width: 100%;
+        }
+    }
+    &__description {
+        padding: 0 10%;
+        text-align: left;
+        font-family: $regular-font-family1;
+        font-size: 1em;
+        color: $text-color;
+        @include desktop {
+            font-size: 1rem;
+        }
+        @include laptop {
+            font-size: .9rem;
+        }
+        @include tablets {
+            font-size: .8rem;
+        }
+        @include phones {
+            font-size: .8rem;
+            padding: 0;
+        }
+        &:last-child {
+            margin-top: 1.25rem;
+            margin-bottom: 3.75rem;
+
+            @include phones {
+                margin-top: .6rem;
+                margin-bottom: 1.8rem;
+            }
+        }
+    }
+
+    &__subtitle {
+        max-width: 16rem;
+
+        @include laptop {
+            max-width: 14rem;
+        }
+    }
+}
+
+.about-description-help:nth-child(2) {
+    margin-top: 1.5rem;
+}

@@ -1,0 +1,21 @@
+.mobile-menu
+    #hamburger.hamburger
+        .hamburger__fragment.hamburger__fragment--top
+        .hamburger__fragment.hamburger__fragment--middle
+        .hamburger__fragment.hamburger__fragment--bottom
+    nav(tabindex="-1").mobile-menu__custom
+        ul.socials.socials--mobile
+            each item in [{"socials": "vk", "href": "https://vk.com/id297584947"}, {"socials": "gh", "href": "https://github.com/kaurav83"}, {"socials": "in", "href": "https://www.linkedin.com/in/vitaliypuga/"}]
+                li.socials__item
+                    a(href=`${item.href}` class=`socials__link socials__link--${item.socials}`)
+        ul.menu.menu--mobile
+            each item in [{'titleRouter': 'Мои работы', 'hrefRouter': '/works' }, {'titleRouter': 'Блог', 'hrefRouter': '/blog' }, {'titleRouter': 'Обо мне', 'hrefRouter': '/about' }]
+                li.menu__item.menu__item--mobile
+                    a(href=`${item.hrefRouter}`).menu__link=item.titleRouter
+            if (!user) 
+                    li.menu__item.menu__item--login
+                        a(href="/login").menu__link Войти
+                
+            if (user)
+                li.menu__item.menu__item--register
+                    a(href="/register").menu__link Регистрация

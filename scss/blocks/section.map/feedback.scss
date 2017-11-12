@@ -1,0 +1,106 @@
+.feedback {
+    padding-top: 1rem;
+    font-family: $medium-font-family5;
+    @include phones {
+        padding-top: 0;
+    }
+    &__subtitle {
+        padding: 0 4.75rem;
+        @include  phones {
+            margin: 1rem 0 1rem 0;
+        }
+    }
+    &__list{
+        padding: 0 2.5rem 2.5rem 2.5rem;
+        @include  phones {
+            padding: 0 1rem 1rem 1rem;
+        }
+
+        @media screen and (max-width: 700px){
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+
+        @media screen and (max-width: 500px){
+            padding: 0 1rem 1rem 1rem;
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 499px){
+            padding: 0 .5rem .5rem .5rem;
+        }
+
+    }
+    &__item {
+        margin: .9375rem 0;
+    }
+    &__item:first-child {
+        margin-top: 0;
+    }
+    &__item:last-child {
+        margin-bottom: 0;
+    }
+    &__link {
+        font-size: 1rem;
+        color: $text-color;
+        &:hover {
+            color: $main-color-bg2;
+            transition: .1s;
+        }
+
+        @media screen and (max-width: 700px){
+            font-size: .7rem;
+        }
+ 
+    }
+    &__link--skype:before {
+        content: '\f17e';
+        font-family: FontAwesome;
+        font-size: 1.7rem;
+        margin-right: .3125rem;
+        vertical-align: -.1875rem;
+        padding-right: .3125rem;
+        color: $main-color-bg;
+
+        @include  phones {
+            font-size: 1.2rem;
+        }
+    }
+    &__link--email:before {
+        content: '\f0e0';
+        font-family: FontAwesome;
+        font-size: 1.4rem;
+        vertical-align: -.1875rem;
+        margin-right: .3125rem;
+        padding-right: .3125rem;
+        color: $main-color-bg;
+
+        @include  phones {
+            font-size: 1rem;
+        }
+    }
+    &__link--phone:before {
+        content: '\f095';
+        font-family: FontAwesome;
+        font-size: 1.7rem;
+        vertical-align: -.1875rem;
+        margin-right: .3125rem;
+        padding-right: .3125rem;
+        color: $main-color-bg;
+
+        @include  phones {
+            font-size: 1.2rem;
+        }
+    }
+    &__link--address:before {
+        content: '\f041';
+        font-family: FontAwesome;
+        font-size: 1.7rem;
+        vertical-align: -.1875rem;
+        margin-right: .3125rem;
+        padding-right: .6125rem;
+        color: $main-color-bg;
+
+        @include  phones {
+            font-size: 1.2rem;
+        }
+    }
+}

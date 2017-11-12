@@ -1,0 +1,11 @@
+extends ./main-layout
+
+block title
+    | Мои работы
+block content 
+    +preloader
+    include ./header
+    include parts/works-triangle
+    include parts/slider
+    include ./work-about
+    include parts/footer-other

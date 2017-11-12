@@ -1,0 +1,19 @@
+section.section.work-about
+    .work-about__container
+        .work-about__title-section
+            +title('Что обо мне говорят', 'about-header.png', 'work-about__title')
+        .work-about__opinion-container
+            ul.work-about__opinion-list
+                each item in [{"text": "Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae.", "photo": "people1", "name": "Антон Самойлов", "status": "Проект менеджер"}, {"text": "Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae.", "photo": "people2", "name": "Анна Мишина", "status": "Предпрениматель"}]
+                    li.work-about__opinion-item
+                        img(src=`img/content/${item.photo+'.jpg'}`).work-about__opinion-photo
+                        .work-about__opinion-person
+                            p.work-about__opinion-name=item.name
+                            p.work-about__opinion-status=item.status
+                        .work-about__opinion-description
+                            p.work-about__opinion-text=item.text
+    .work-about__work-form.work-form
+        include innerWork/work-form
+    .work-about__down-arrow
+        span.work-about__down-arrow-link
+            i.fa.fa-angle-up

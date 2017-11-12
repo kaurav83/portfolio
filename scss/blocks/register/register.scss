@@ -1,0 +1,244 @@
+.register {
+    background: rgba(117, 150, 217, 0.6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 23.75rem;
+    overflow: hidden;
+    border-radius: .3rem;
+    @include tablets {
+        width: 21.875rem;
+    }
+    @include phones {
+        width: 18.75rem;
+    }
+    &__subtitle-wrapper {
+        padding: 2.5rem 0 0 0;
+        text-align: center;
+    }
+    &__subtitle {
+        position: relative;
+        font-size: 1.8rem;
+        color: rgba(255, 255, 255, 1);
+        @include tablets {
+            font-size: 1.6rem;
+        }
+        @include phones {
+            width: 18.75rem;
+            font-size: 1.4rem;
+        }
+    }
+    &__field {
+        text-align: center;
+        position: relative;
+        margin: 1rem auto;
+        width: 21.25rem;
+        @include tablets {
+            width: 19.25rem;
+        }
+        @include phones {
+            width: 16.25rem;
+        }
+        &:nth-child(3):before {
+            content: '\f084';
+            font-family: FontAwesome;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background: #c6bfb6;
+            transform: translateY(-50%);
+            padding: inherit;
+            width: 2.8125rem;
+            height: 100%;
+            line-height: 2.9;
+            color: #555;
+            border-top-left-radius: .3rem;
+            border-bottom-left-radius: .3rem;
+        }
+        &:nth-child(2):before {
+            content: '\f007';
+            font-family: FontAwesome;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background: #c6bfb6;
+            transform: translateY(-50%);
+            padding: inherit;
+            width: 2.8125rem;
+            height: 100%;
+            line-height: 2.9;
+            color: #555;
+            border-top-left-radius: .3rem;
+            border-bottom-left-radius: .3rem;
+        }
+        input {
+            width: 21.25rem;
+            height: 2.8125rem;
+            padding-left: 4rem;
+            border-top-left-radius: .3rem;
+            border-bottom-left-radius: .3rem;
+            border-top-right-radius: .3rem;
+            border-bottom-right-radius: .3rem;
+            @include tablets {
+                width: 19.25rem;
+            }
+            @include phones {
+                width: 16.25rem;
+            }
+        }
+
+        input[placeholder], input[placeholder] {
+            font-family: $regular-font-family1;
+            font-size: 1rem;
+            color: rgba(55, 62, 66, .5);
+        }
+    }
+    &__checkbox {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+        margin-top: 1.5rem;
+    }
+    &__checkbox-checkbox {
+        opacity: 0;
+    }
+    &__checkbox-check {
+        position: relative;
+        top: .0625rem;
+        width: 1.0625rem;
+        height: 1.0625rem;
+        border: .0625rem solid $main-color-bg;
+        border-radius: .1875rem;
+        vertical-align: middle;
+        transition: background .1s ease;
+        cursor: pointer;
+        &:after {
+            content: '';
+            position: absolute;
+            top: .0625rem;
+            left: .3125rem;
+            width: .3125rem;
+            height: .6875rem;
+            opacity: 0;
+            border-right: .125rem solid #fff;
+            border-bottom: .125rem solid #fff;
+        }
+    }
+    &__checkbox-label {
+        margin-left: .3125rem;
+        vertical-align: middle;
+        cursor: pointer;
+        font-size: 1rem;
+        color: #fff;
+        font-family: $regular-font-family1;
+    }
+
+    #check:checked ~ .register__checkbox-check {
+        border-color: transparent;
+        background: $main-color-bg;
+        &:after {
+            opacity: 1;
+            transform: rotate(45deg) scale(1);
+        }
+    }
+
+    &__verify-text {
+        font-family: $bold-font-family1;
+        color: #fff;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    &__verify {
+        text-align: center;
+        margin: 1rem 0 2rem 0;
+        
+        input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            + .radio-label {
+                font-family: $regular-font-family1;
+                color: #fff;
+                &:before {
+                    content: '';
+                    background: #fff;
+                    border: .0625rem solid (125, 125, 125, 1);
+                    display: inline-block;
+                    width: 1rem;
+                    height: 1rem;
+                    position: relative;
+                    // top: -.2rem;
+                    margin-right: .2rem;
+                    vertical-align: -.15rem;
+                    cursor: pointer;
+                    text-align: center;
+                    transition: all 250ms ease;
+                    border-radius: 100%;
+                }
+            }
+            &:checked {
+                + .radio-label {
+                    font-family: $medium-font-family1;
+                    font-size: 1rem;
+                    color: #fff;
+                    &:before {
+                        background: $main-color-bg;
+                        box-shadow: inset 0 0 0 .25rem #fff;
+                    }
+                }
+            }
+        }
+        .radio-label {
+            margin: 0 1rem;
+        }
+    }
+    &__list {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    &__item {
+        width: 100%;
+        text-align: center;
+        &:first-child {
+            border-right: .02rem solid rgba(14, 64, 97, .8);
+        }
+        &:last-child {
+            border-left: .02rem solid rgba(14, 64, 97, .8);
+        }
+    }
+    &__link {
+        font-family: $medium-font-family5;
+        font-size: 1rem;
+        color: #ffffff;
+        background: $main-color-bg2;
+        width: 100%;
+        cursor: pointer;
+        border: none;
+        //border-bottom-left-radius: .3rem;
+        border-bottom: .1rem solid $main-color-bg2;
+        &:hover {
+            background: $main-color-bg;
+            transition: .2s;
+            border-bottom: .1rem solid $main-color-bg;
+        }
+    }
+}
+
+.loged-user {
+    color: #fff;
+}
+.logout-user {
+    color: blue;
+    padding: 0 .5rem;
+    font-family: "FiraMonoOT", sans-serif;
+}
+.logout-user:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+.logout-user-from {
+    color: #fff;
+}

@@ -1,0 +1,32 @@
+extends ./main-layout
+
+block title
+    | Админка
+
+block content
+    +preloader
+    
+    .login-wrapper
+        img.login-wrapper__img(src="img/bg/heroPortfolio2.jpg")
+        .login
+            .login__subtitle-wrapper
+                h2.login__subtitle.subtitle
+                    | Админка
+                    +subtitle
+            form(action="/to-admin" method="POST" id="toAdmin")
+                .status
+                .login__field
+                    input(type="text" name="login" id="to-admin-name" placeholder="Логин")
+                .login__field
+                    input(type="password" name="password" id="to-admin-pass" placeholder="Пароль")                
+                ul.login__list.login__list--admin
+                    li.login__item
+                        input.login__link(type='submit' name="" value="Отправить") 
+                    li.login__item
+                        a(href='/')
+                            input.login__link(type="button" name="" value="На главную")
+                    
+
+        .copyright
+            span &#169;  Виталий Пуга 
+            span  2017

@@ -1,0 +1,50 @@
+@import "base/_reset";
+@import "base/_fonts";
+//@import "components/_jquery.formstyler";
+//@import "components/_fancybox";
+//@import "components/_slick";
+//@import "components/_mCustomScrollbar";
+@import "layout/wrapper";
+@import "layout/_media";
+
+@import "blocks/title";
+@import "blocks/subtitle";
+@import "blocks/copyright";
+@import "blocks/preloader";
+
+@import "blocks/header/hero";
+@import "blocks/header/user";
+@import "blocks/header/down-arrow";
+@import "blocks/header/socials";
+@import "blocks/header/menu";
+@import "blocks/header/mobile-menu";
+@import "blocks/header/hamburger.scss";
+
+@import "blocks/section.about/about";
+@import "blocks/section.about/triangle";
+@import "blocks/section.about/skills";
+@import "blocks/section.about/about-data";
+@import "blocks/section.about/skill-section";
+
+@import "blocks/section.map/map";
+@import "blocks/section.map/feedback";
+
+@import "blocks/footer/footer";
+
+@import "blocks/auth/auth-wrapper";
+@import "blocks/auth/auth";
+@import "blocks/auth/auth-button";
+
+@import "blocks/login/login-wrapper";
+@import "blocks/login/login";
+
+@import "blocks/works/works.scss";
+@import "blocks/works/slider.scss";
+@import "blocks/works/work-about";
+@import "blocks/works/work-form";
+
+@import "blocks/blog/blog";
+@import "blocks/blog/blog-container";
+
+@import "blocks/register/register-wrapper";
+@import "blocks/register/register";

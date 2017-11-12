@@ -1,0 +1,84 @@
+section.section.about
+    .about__wrapper
+        .about__left.about__left--biggest
+            svg(
+                viewbox="0 0 1000 100" 
+                preserveAspectRatio="none"
+                class="triangle triangle__fill--white about__triangles"
+                )
+                polygon(points="0,100 495,0 1000,100")
+            .about__left-content
+                +title('Обо мне', 'about-header.png', 'about__section-title')
+                .about__photo-container
+                    img(src="img/content/about.jpg").about__photo
+                h2.about__subtitle.subtitle 
+                    | Кто я
+                    +subtitle
+                p.about__description
+                    | Здравствуйте! Меня зовут Виталий. Проживаю в городе у моря, Одессе.
+                p.about__description
+                    | По образованию я бухгалтер, но нашел свое призвание в веб-разработке. Веб-разработкой заинтересовался в 2013 году, с тех пор стремлюсь приобретать знания и навыки, которые позволят мне создавать "быстрые", удобные для пользователя и доходные для заказчика сайты и приложения. На данный момент занимаюсь через фриланс биржу разработкой сайтов разной специализации и разного уровня сложности с нуля под ключ. 
+                p.about__description 
+                    | Для меня разработка сайта, это прежде всего творческий процесс, поэтому предпочитаю обходиться как можно меньшим количеством готовых решений. Я многого не знаю, но стремлюсь постигать и впитывать как можно больше хороших знаний и практик.
+        .about__left.about__left--desktop
+            svg(
+                viewbox="0 0 1000 100" 
+                preserveAspectRatio="none"
+                class="triangle triangle__fill--white about__triangles"
+                )
+                polygon(points="0,0 0,110 1000, 100")
+            
+            svg(
+                viewbox="0 0 1000 100"
+                preserveAspectRatio="none"
+                class="triangle-tablets"
+                )
+                polygon(points="0,100 495,0 1000,100")
+                //- polygon(points="100,1000 0,490 1000,0")
+            .about__left-content
+                +title('Обо мне', 'about-header.png', 'about__section-title')
+                .about__photo-container
+                    img(src="img/content/about.jpg").about__photo
+                h2.about__subtitle.subtitle 
+                    | Кто я
+                    +subtitle
+                p.about__description
+                    | Здравствуйте! Меня зовут Виталий. Занимаюсь разработкой сайтов разной специализации и разного уровня сложности с нуля под ключ. Проживаю в Одессе.
+                p.about__description
+                    | Для меня разработка сайта, это прежде всего творческий процесс, поэтому предпочитаю обходиться как можно меньшим количеством готовых решений. Я многого не знаю, но стремлюсь постигать и впитывать как можно больше хороших знаний и практик. У меня хорошие навыки адаптивной вёрстки и программирования на Javascript, как на стороне клиента, так и на стороне сервера. Однако, по разработке макетов лучше обратиться к моим коллегам дизайнерам. 
+        .about__right.about__right--desktop
+            svg(
+                viewbox="0 0 1000 100" 
+                preserveAspectRatio="none"
+                class="triangle triangle__fill--bege about__triangles"
+                )
+                polygon(points="0,100 1000,100 1000,0")
+            .about-data
+                .about-data__description
+                    .about-data__title
+                        .subtitle 
+                            |Чем я могу быть полезен
+                    .about-data__text
+                        p У меня хорошие навыки адаптивной вёрстки и программирования на Javascript, как на стороне клиента, так и на стороне сервера. Однако, по разработке макетов лучше обратиться к моим коллегам дизайнерам. 
+                    .about-data__content
+                        include innerAbout/skills
+
+        .about__right.about__right--biggest 
+            svg(
+                viewbox="0 0 1000 100" 
+                preserveAspectRatio="none"
+                class="triangle triangle__fill--bege about__triangles"
+                )
+                polygon(points="0,100 515,0 1000,100")
+                //- polygon(points="0,100 1000,100 1000,0")
+            .about-data
+                .about-data__description.about-user-info
+                    .about-data__title
+                        .subtitle 
+                            |Чем я могу быть полезен
+                    .about-data__text
+                        p.about-description-help У меня хорошие навыки адаптивной вёрстки, по желанию заказчика могу верстать с помощью bootstrap/smart сеток или без использования сеток вовсе. Программирую на Javascript, как на стороне клиента, так и на стороне сервера. Однако, по разработке макетов лучше обратиться к моим коллегам дизайнерам. 
+                        p.about-description-help С удовольствием реализую посадку вашего сайта или приложения на CMS (KeystoneJS), сделаю формы для регистрации, авторизации или обратной связи, напишу чат для взаимодействия с пользователями...
+                    .about-data__content
+                        include innerAbout/skills
+

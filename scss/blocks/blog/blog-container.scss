@@ -1,0 +1,102 @@
+.blog-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 5% 10%;
+    &__sidebar {
+        flex: 1;
+        // max-width: 300px;
+
+        @include tablets {
+            display: none;
+        }
+        &-mobile {
+            display: block;
+            opacity: 1;
+            position: fixed;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            // overflow: auto;
+            transition: all 350ms cubic-bezier(.6, .05, .28, .91);
+            padding: 0 .4rem;
+            background: transparent;
+            width: 80%;
+            left: calc(-39% - .3rem);
+            // &:after {
+            //     content: '';
+            //     padding-left: 2rem;
+            // }
+            &--openSidebar {
+                opacity: 1;
+                left: 38%;
+                transition: all 350ms cubic-bezier(.6, .05, .28, .91);
+            }
+
+            @include tabletsMin {
+                display: none;
+            }
+
+            @include tablets {
+                display: block;
+            }
+        }
+    }
+    &__content {
+        flex: 3.5;
+        margin-left: 5%;
+        @include phones {
+            font-size: .8rem;
+        }
+    }
+
+    &__btn {
+        width: 1rem;
+        height: 4rem;
+        background: #a0bbce;
+        position: absolute;
+        top: 50%; 
+        // right: -5rem;
+        opacity: 1;
+        left: 100%;
+        z-index: 40;
+        transform: translate(-50%, -50%);
+        border-top-right-radius: 7rem;
+        border-bottom-right-radius: 7rem;
+        &:hover {
+            background: $main-color-bg;
+        }
+    }
+}
+.sidebar {
+    background-color: #484848;
+    padding: .5rem 2rem;
+
+    &__item {
+        margin: 1rem 0;
+        @include phones {
+            margin: .6rem 0;
+        }
+    }
+    &__link {
+        color: rgba(255, 255, 255, .8);
+        font-size: 1rem;
+        font-family: $regular-font-family1;
+
+        @include phones {
+            font-size: .8rem;
+        }
+    }
+
+    &--desktop {
+        background-color: #fff;
+        padding: 0;
+        .sidebar__link {
+            color: $text-color;
+        }
+    }
+}
+// .animate {
+//     transition: all 350ms cubic-bezier(.6, .05, .28, .91);
+//     display: block;
+// }

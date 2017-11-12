@@ -1,0 +1,44 @@
+.skill {
+    position: relative;
+    &__name {
+        font-family: $regular-font-family1;
+        color: $main-color-bg;
+        font-size: .80125rem;
+        text-align: center;
+    }
+    &__circle {
+        fill: transparent;
+        stroke-width: 15;
+        display: block;
+        width: 6.25rem;
+        height: 6.25rem;
+    }
+
+    &__name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.skills {
+    display: flex;
+    margin-top: 2rem;
+    flex-direction: column;
+    &__item {
+        margin: 1rem 0;
+    }
+    
+    &__circle {
+        //fadf
+    }
+
+    &__circle-under {
+        stroke: #ccc;
+    }
+
+    &__circle-above {
+        stroke: $main-color-bg;;
+    }
+}

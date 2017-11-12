@@ -1,0 +1,30 @@
+extends ./main-layout
+
+block title
+    | Приветствие
+
+block content
+    +preloader
+    .auth-wrapper
+        .auth-button 
+            a(href="/login").auth-button__link Авторизоваться
+        .auth
+            .auth__container
+                .auth__user.user
+                    .user__photo
+                        .user__photo-avatar
+                            img(src="img/content/user.jpg", alt="").user__photo-img
+                        .user__name.auth__user-name Виталий Пуга
+                        .user__desc.auth__user-desc Личный сайт веб-разработчика
+                .auth__socials.socials
+                    each item in [{"socials": "vk", "href": "https://vk.com/id297584947"}, {"socials": "gh", "href": "https://github.com/kaurav83"}, {"socials": "in", "href": "https://www.linkedin.com/in/vitaliypuga/"}]
+                        li.socials__item
+                            a(href=`${item.href}` class=`socials__link socials__link--${item.socials} auth__socials-link auth__socials--${item.socials}`)
+                ul.auth__list
+                    each item in [{"link": 'Мои работы', "href": '/works'}, {"link": 'Обо мне', "href": '/about'}, {"link": 'Блог', "href": '/blog'}]
+                        li.auth__item
+                            a.auth__link(href=`${item.href}`)=item.link
+
+        .copyright
+            span &#169  Виталий Пуга 
+            span  2017

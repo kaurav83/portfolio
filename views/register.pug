@@ -1,0 +1,47 @@
+extends ./main-layout
+
+block title
+    | Регистрация
+
+block content
+    +preloader
+    
+    .register-wrapper
+        img.register-wrapper__img(src="img/bg/heroPortfolio2.jpg")
+        .register
+            .register__subtitle-wrapper
+                h2.register__subtitle.subtitle
+                    | Регистрация
+                    +subtitle
+            form(action="/register" method="POST" id="register")
+                .status
+                .register__field
+                    input(type="text" name="username" id="register-name" placeholder="Логин")
+                .register__field
+                    input(type="password" name="password" id="pass" placeholder="Пароль")
+                .register__checkbox
+                    input(type="checkbox" class="register__checkbox-checkbox" id="check" value="Я человек" checked="true")
+                    label.register__checkbox-check(for="check") 
+                    label.register__checkbox-label(for="check") Я человек 
+                p.register__verify-text
+                    | Вы точно не робот?
+                .register__verify
+                    input(type="radio" name="radio" id="yes" checked) 
+                    label(for="yes" class="radio-label") Да
+                    input(type="radio" name="radio" id="no") 
+                    label(for="no" class="radio-label") Нет
+                //- input(name="" type="submit" value="Войти")
+                //- input(name="" type="reset" value="Очистить")
+                //- button.btn.btn-default(type='submit') Submit
+                ul.register__list
+                    li.register__item
+                        input.register__link(type='submit' name="" value="Отправить") 
+                    li.register__item
+                        a(href='/')
+                            input.register__link(type="button" name="" value="На главную") 
+                //- li.register__item
+                    
+
+        .copyright
+            span &#169;  Виталий Пуга 
+            span  2017

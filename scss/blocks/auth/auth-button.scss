@@ -1,0 +1,34 @@
+.auth-button {
+    position: absolute;
+    top: 2.5625rem;
+    right: 6.25rem;
+    
+    @include desktop {
+        top: 2.25rem;
+        right: 1.25rem;
+    }
+
+    @include phones {
+        top: 5%;
+        right: 0;
+        // left: 50%;
+        // transform: translateX(-50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    &__link {
+        color: rgba(255, 255, 255, 1);
+        font-size: .875rem;
+        border: .0625rem solid rgba(255, 255, 255, 1);
+        border-radius: .4rem;
+        font-family: $medium-font-family5;
+        padding: 1rem 2rem;
+
+        &:hover {
+            color: $main-color-bg2;
+            background: #fff;
+            border: .0625rem solid $main-color-bg2;
+        }
+    }
+}

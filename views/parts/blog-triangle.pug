@@ -1,0 +1,41 @@
+section.section.blog
+    .blog__top
+        .blog__top-biggest
+            svg(
+                viewbox="0 0 1000 100" 
+                preserveAspectRatio="none"
+                class="triangle blog__triangle-fill--white blog__triangles"
+                )
+                polygon(points="0,100 495,0 1000,100")
+            svg(
+                viewbox="0 0 1000 100" 
+                preserveAspectRatio="none"
+                class="triangle blog__triangle-fill--bege blog__triangles"
+                )
+                polygon(points="0,100 515,0 1000,100")
+            .blog__title
+                +title('Блог', 'decor-blog.png', 'blog__section-title')
+        .blog__top-desktop
+            svg(
+                viewbox="0 0 1000 100" 
+                preserveAspectRatio="none"
+                class="triangle blog__triangle-fill--white blog__triangles"
+                )
+                polygon(points="0,0 0,110 1000, 100")
+            svg(
+                viewbox="0 0 1000 100" 
+                preserveAspectRatio="none"
+                class="triangle blog__triangle-fill--bege blog__triangles"
+                )
+                polygon(points="0,100 1000,100 1000,0")
+            .blog__title
+                +title('Блог', 'decor-blog.png', 'blog__section-title')
+        .blog__top-tablets
+            svg(
+                viewbox="0 0 1000 100"
+                preserveAspectRatio="none"
+                class="triangle-tablets triangle-tablets--bege"
+                )
+                polygon(points="0,100 495,0 1000,100")
+            .blog__title
+                +title('Блог', 'decor-blog.png', 'blog__section-title')

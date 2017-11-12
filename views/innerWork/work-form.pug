@@ -1,0 +1,14 @@
+
+.work-form__container
+    .work-form__feedback
+        h2.work-form__title.subtitle 
+            | Обратная связь
+            +subtitle
+        form#email(action="contact" method="POST")
+            .status
+            input(type="text" name="name" placeholder="Имя" class="work-form__field")
+            input(type="email" name="email" placeholder="Email").work-form__field
+            textarea(name="text" rows="5" placeholder="Написать сообщение...").work-form__field
+            .work-form__button
+                input(name="" type="submit" value="Отправить").work-form__button-submit.button-submit 
+                input(name="" type="reset" value="Отчистить").work-form__button-clear.button-clear 

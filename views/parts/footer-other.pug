@@ -1,0 +1,21 @@
+footer.footer.footer--other
+    .footer__container
+        p.footer__description 
+            | Создание сайтов и приложений с нуля. Создание корпоративных сайтов. Создание SPA приложений. Создание сайтов-визиток. Создание Landing pages
+        .footer__navigation
+            .footer__nav-wrapper
+                ul.menu.footer__menu
+                    each item in [{'titleRouter': 'Мои работы', 'hrefRouter': '/works' }, {'titleRouter': 'Блог', 'hrefRouter': '/blog' }, {'titleRouter': 'Обо мне', 'hrefRouter': '/about' }, {'titleRouter': 'Авторизация', 'hrefRouter': '/login'}]
+                        li.menu__item.footer__menu-item
+                            a(href=`${item.hrefRouter}`).menu__link=item.titleRouter
+                ul.socials.footer__socials
+                    each item in [{"socials": "vk", "href": "https://vk.com/id297584947"}, {"socials": "gh", "href": "https://github.com/kaurav83"}, {"socials": "in", "href": "https://www.linkedin.com/in/vitaliypuga/"}]
+                        li.socials__item
+                            a(href=`${item.href}` class=`socials__link socials__link--${item.socials}`)
+        .footer__feedback
+            .feedback.footer__fback
+                .feedback__title.footer__feedback-title 
+                    ul.feedback__list.footer__feedback-list
+                        each link in [{"hr": 'skype:Vitaliy__Puga', "val":"Vitaliy Puga"}, {"hr": 'mailto:puga.vitaliy@gmail.com', "val": "puga.vitaliy@gmail.com"}, {"hr": 'tel:+38095086829', "val": "095086829"}, {"val": "Одесса, пос. Котовского"}]
+                            li.feedback__item
+                                a(href=`${link.hr}` class="feedback__link footer__feedback-link")=link.val 

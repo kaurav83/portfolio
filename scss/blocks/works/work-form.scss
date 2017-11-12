@@ -1,0 +1,122 @@
+.work-form {
+    position: relative;
+    width: 100%;
+    border-radius: 0.3rem;
+    &__container {
+        margin: 5rem auto;
+        margin-bottom: 3rem;
+        text-align: center;
+        width: 100%;
+        max-width: 23.75rem;
+        @include tablets {
+            width: 21.875rem;
+        }
+        @include phones {
+            width: 18.75rem;
+        }
+    }
+
+    &__title {
+        position: relative;
+        font-size: 1.9rem;
+        padding: 1.5rem .2rem;
+        margin: 0 -.5rem;
+        @include tablets {
+            font-size: 1.6rem;
+            margin: 0 auto;
+        }
+        @include phones {
+            width: 18.75rem;
+            font-size: 1.4rem;
+            margin: 0 auto;
+        }
+    }
+    input {
+        border-top-left-radius: .3rem;
+        border-bottom-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+        padding: .7rem;
+    }
+    textarea {
+        border-top-left-radius: .3rem;
+        border-bottom-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+        margin-bottom: 1rem;
+    }
+    &__field {
+        min-width: 22rem;
+        margin: .6rem 0;
+        @include tablets {
+            min-width: 19.25rem;
+        }
+        @include phones {
+            min-width: 16.25rem;
+        }
+        &:first-child {
+            margin: 0 0 .6rem 0;
+        }
+        &--text {
+            border-top-left-radius: .3rem;
+            border-bottom-left-radius: .3rem;
+            border-top-right-radius: .3rem;
+            border-bottom-right-radius: .3rem;
+        
+            padding: 2rem 0;
+        }
+        &--email {
+            padding: .5rem 0;
+        }
+    }
+    
+    &__feedback {
+        background: rgba(117, 150, 217, 0.6);
+        border-radius: 0.3rem;
+        
+    }
+
+    &__button {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    &__button-submit {
+        width: 50%;
+        padding: .8rem 0;
+        font-size: 1rem;
+        font-family: $medium-font-family5;
+        color: #fff;
+        background: $main-color-bg2;
+        border: none;
+        border-right: .024rem solid rgba(14, 64, 97, .8);
+        border-bottom-left-radius: 0.3rem;
+        &:hover {
+            background: $main-color-bg;
+            transition: .1s ease-out;
+        }
+    }
+    &__button-clear {
+        width: 50%;
+        padding: .5rem 0;
+        font-size: 1rem;
+        font-family: $medium-font-family5;
+        color: #fff;
+        background: $main-color-bg2;
+        border: none;
+        border-left: .025rem solid rgba(14, 64, 97, .8);
+        border-bottom-right-radius: 0.3rem;
+        &:hover {
+            background: $main-color-bg;
+            transition: .1s ease-out;
+        }
+    }
+}
+
+input[placeholder] {
+    font-family: $regular-font-family1;
+}
+
+textarea[placeholder] {
+    font-family: $regular-font-family1;
+}

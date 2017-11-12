@@ -1,0 +1,28 @@
+@media screen and (max-width: 1200px) {
+	
+}
+
+@media screen and (min-width: 992px){
+	
+}
+
+@media screen and (max-width: 991px) {
+	
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	
+}
+
+@media screen and (max-width: 767px) {
+	
+}
+
+//для ретина дисплеев 
+//(видео от loftschool 'Урок 12. Адаптивная вёрстка' 56 минута)
+//https://coursehunters.net/course/loftschool-advanced-dev
+// http://dpi.lv/
+@media screen and (-webkit-min-device-pixel-ratio: 1.5),
+    screen and (min-resolution: 144dpi) {
+
+}

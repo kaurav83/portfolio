@@ -1,0 +1,25 @@
+section.section.slider
+    .slider__left-full
+        ul.slider__list-data
+            each item in [{"title": "Тестовое приложение посвященное мотоциклам YAMAHA", "technologies": ["Angular 2,", "JavaScript,", "HTML,", "CSS"], "link": "https://kaurav83.github.io/#/supersport/item/1", "additionClass": "slider__slide"}, {"title": "Тестовый Landing ресторана", "technologies": ["HTML,", "CSS,", "JavaScript,", "AngularJS 1.x"], "link": "http://renome.adr.com.ua/#/", "additionClass": ""}, {"title": "Тестовый сайт-портфолио дизайнера", "technologies": ["HTML,", "CSS,", "JavaScritp"], "link": "http://mairila.zzz.com.ua/wordpress/", "additionClass": ""}]
+                li(class=`${item.additionClass}`).slider__item-data
+                    h2.slider__title=item.title 
+                    ul.slider__list-technologies
+                        each tech in item.technologies
+                            li.slider__technology=tech
+                    a.slider__link-project(href=`${item.link}`) Посмотреть сайт
+    .slider__right-container
+        ul.slider__right-long
+            li.slider__carousel-item.sliding
+                img(src="img/btns/yamaha-big.png")
+            li.slider__carousel-item
+                img(src="img/btns/renome-big.png")
+            li.slider__carousel-item
+                img(src="img/btns/mairila-big.png")
+        .slider__right-short
+            #prev.slider__previous-btn
+                img.slider__preview(src="img/btns/renome-min.png")
+                .slider__btn-cover.slider__btn-cover--down
+            #next.slider__next-btn
+                img.slider__preview(src="img/btns/mairila-min.png")
+                .slider__btn-cover.slider__btn-cover--up

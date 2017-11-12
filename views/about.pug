@@ -1,0 +1,12 @@
+extends ./main-layout
+
+//- - var itemsMenu = ['Мои работы', 'Блог', 'Обо мне', 'Авторизация']
+block title
+    | Обо мне
+
+block content
+    +preloader
+    include ./header
+    include ./about-content
+    include ./map
+    include ./footer

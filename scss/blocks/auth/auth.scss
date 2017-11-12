@@ -1,0 +1,99 @@
+.auth {
+    background: rgba(117, 150, 217, 0.6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 23.75rem;
+    overflow: hidden;
+    border-radius: .3rem;
+
+    @include tablets {
+        width: 21.875rem;
+    }
+
+    @include phones {
+        width: 18.75rem;
+    }
+
+    &__container {
+        // padding: 
+    }
+
+    &__user {
+        text-align: center;
+        width: 100%;
+        padding: 2.5rem 0 1.3rem 0;
+    }
+    &__user-name {
+        opacity: 1;
+    }
+    &__user-desc {
+        opacity: 1;
+    }
+    &__socials {
+        text-align: center;
+        padding-bottom: 1.3rem;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        &--in:before {
+            content: '\f0e1';
+            font-family: FontAwesome;
+            color: rgba(255, 255, 255, .8);
+        }
+        &--vk:before {
+            content: '\f189';
+            font-family: FontAwesome;
+            color: rgba(255, 255, 255, .8);
+        }
+        &--gh:before {
+            content: '\f113';
+            font-family: FontAwesome;
+            color: rgba(255, 255, 255, .8);
+        }
+        &--in:hover:before {
+            color: rgba(255, 255, 255, 1);
+            transition: .1s;
+        }
+        &--vk:hover:before {
+            color: rgba(255, 255, 255, 1);
+            transition: .1s;
+        }
+        &--gh:hover:before {
+            color: rgba(255, 255, 255, 1);
+            transition: .1s;
+        }
+    }
+    &__socials-link {
+        opacity: 1;
+    }
+    &__list {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    &__item {
+        background: $main-color-bg2;
+        border-right: .02rem solid rgba(14, 64, 97, .8);
+        border-left: .02rem solid rgba(14, 64, 97, .8);
+        width: 100%;
+        text-align: center;
+        &:hover {
+            background: $main-color-bg;
+            transition: .2s;
+        }
+        &:nth-child(2n+1) {
+            border-right: 0;
+            border-left: 0;
+        }
+    }
+    &__link {
+        font-family: $medium-font-family5;
+        font-size: 1rem;
+        color: #ffffff;
+        padding: 1rem 0;
+        display: block;
+    }
+}

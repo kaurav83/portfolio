@@ -1,0 +1,30 @@
+.mobile-menu {
+    @include tabletsMin {
+        display: none;
+    }
+
+    @include tablets {
+        display: block;
+    }
+    &__custom {
+        position: absolute;
+        z-index: 10;
+        overflow: auto;
+        top: 0;
+        left: -17.1875rem;
+        width: 15.625rem;
+        opacity: 0;
+        padding: 1rem;
+        height: 100vh;
+        background-color: #484848;
+        color: #fff;
+        transition: all 350ms cubic-bezier(.6, .05, .28, .91);
+    }
+    &__custom--active {
+        left: 0;
+        opacity: 1;
+    }
+    &-custom--active:focus {
+        outline: none;
+    }
+}

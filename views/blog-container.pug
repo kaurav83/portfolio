@@ -1,0 +1,20 @@
+section.section.blog-container
+    h2=title1
+    .blog-container__sidebar
+        .sidebar.sidebar--desktop
+            .sidebar__container
+                ul.sidebar__list
+                    each item in items
+                        li.sidebar__item
+                            a(href=`/${item.id}`).sidebar__link=item.title
+                            
+    .blog-container__sidebar.blog-container__sidebar-mobile
+        span.blog-container__btn
+        #sidebar.sidebar
+            .sidebar__container
+                ul.sidebar__list
+                    each item in items
+                        li.sidebar__item
+                            a(href=`/${item.id}`).sidebar__link=item.title
+    .blog-container__content
+        

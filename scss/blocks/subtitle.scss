@@ -1,0 +1,50 @@
+.subtitle {
+    font-family: $medium-font-family1;
+    text-transform: uppercase;
+    font-size: 2.1875rem;
+    padding: 0 3.75rem;
+    color: $title-color;
+    position: relative;
+    max-width: 26.6875rem;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+
+    @include laptop {
+        font-size: 1.8rem;
+    }
+
+    @include tablets {
+        font-size: 1.4rem;
+    }
+    @include phones {
+        font-size: 1.2rem;
+    }
+    
+    &__wrapper {
+        display: flex;
+
+        @include tablets {
+            display: none;
+        }
+    }
+    &__wrapper--left {
+        flex-direction: row-reverse;
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translateY(-50%);
+    }
+
+    &__wrapper--right {
+        position: absolute;
+        top: 50%;
+        right: 20%;
+        transform: translateY(-50%);
+    }
+
+    &__circle {
+        
+        fill-opacity: .4;
+    }
+}

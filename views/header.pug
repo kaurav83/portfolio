@@ -1,0 +1,39 @@
+
+header.section.hero
+    .hero__bg
+        img(src="img/bg/heroPortfolio.jpg", alt="")
+    .hero__top-line
+        ul.socials.socials--desktop
+            each item in [{"socials": "vk", "href": "https://vk.com/id297584947"}, {"socials": "gh", "href": "https://github.com/kaurav83"}, {"socials": "in", "href": "https://www.linkedin.com/in/vitaliypuga/"}]
+                li.socials__item
+                    a(href=`${item.href}` class=`socials__link socials__link--${item.socials}`)
+                        //- embed(src=`img/icons/svg/${item}.svg` width="20" height="20")
+        nav.navigation
+            ul.menu
+                each item in [{'titleRouter': 'Мои работы', 'hrefRouter': '/works' }, {'titleRouter': 'Блог', 'hrefRouter': '/blog' }, {'titleRouter': 'Обо мне', 'hrefRouter': '/about' }]
+                    li.menu__item
+                        a(href=`${item.hrefRouter}`).menu__link=item.titleRouter
+                li.menu__item.menu__item--admin
+                    a(href="/to-admin").menu__link Служебный
+                if (!user) 
+                    li.menu__item.menu__item--login
+                        a(href="/login").menu__link Войти
+                    li.menu__item.menu__item--register
+                        a(href="/register").menu__link Регистрация
+                if (user)
+                    a.logout-user(href="/logout") Выйти
+                    span.logout-user-from из
+                    p.loged-user #{user.username}
+            
+    include ./mobile-menu
+    span.down-arrow
+        img(src="img/icons/arrow_down.svg", alt="").down-arrow__icon
+
+    .hero__title
+        img(src="img/decor/portfolio-header.png", alt="").hero__title-pic
+        .user.hero__user-block
+            .user__photo
+                .user__photo-avatar
+                    img(src="img/content/user.jpg", alt="").user__photo-img
+            .user__name Виталий Пуга
+            .user__desc Личный сайт веб-разработчика
