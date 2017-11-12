@@ -23,7 +23,7 @@ const LocalStrategy = require('passport-local').Strategy;
 //mongodb & mongoose
 
 const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 const dev_db_url = 'mongodb://scaffold83:80963319476@ds123695.mlab.com:23695/local_library'
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB);
@@ -36,10 +36,6 @@ require('./models/user');
 
 const dbHandler = mongoose.connection;
 dbHandler.on('error', console.error.bind(console, 'MongoDB connection error'));
-
-dbHandler.once('open', function callback () {
-  console.log("Connected to DB!");
-});
 
 const ModuleUser = require('./models/user');
 const mainUser = new ModuleUser({
