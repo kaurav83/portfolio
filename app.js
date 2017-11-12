@@ -121,29 +121,29 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-server.listen(3000, () => console.log('Сервер работает'));
+// server.listen(3000, () => console.log('Сервер работает'));
 
-server.on('listening', function () {
-  jsonfile
-    .readFile(fileVersionControl, function (err, obj) {
-      if (err) {
-        console.log('Данные для хеширования ресурсов из version.json не прочитаны');
-        console.log('Сервер остановлен');
-        process.exit(1);
-      } else {
-        app.locals.settings = {
-          suffix: obj.suffix,
-          version: obj.version
-        };
-        console.log('Данные для хеширования ресурсов из version.json прочитаны');
+// server.on('listening', function () {
+//   jsonfile
+//     .readFile(fileVersionControl, function (err, obj) {
+//       if (err) {
+//         console.log('Данные для хеширования ресурсов из version.json не прочитаны');
+//         console.log('Сервер остановлен');
+//         process.exit(1);
+//       } else {
+//         app.locals.settings = {
+//           suffix: obj.suffix,
+//           version: obj.version
+//         };
+//         console.log('Данные для хеширования ресурсов из version.json прочитаны');
 
-        //если такой папки нет - создаем ее
-        if (!fs.existsSync(uploadDir)) {
-          fs.mkdirSync(uploadDir);
-        }
+//         //если такой папки нет - создаем ее
+//         if (!fs.existsSync(uploadDir)) {
+//           fs.mkdirSync(uploadDir);
+//         }
 
-        console.log('Express server started on port %s at %s', server.address().port, server.address().address);
-      }
-    });
-});
+//         console.log('Express server started on port %s at %s', server.address().port, server.address().address);
+//       }
+//     });
+// });
 
