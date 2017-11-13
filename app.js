@@ -9,7 +9,6 @@ const app = express();
 const morgan = require('morgan');
 const routes = require('./routes/index');
 const path = require('path');
-const fs = require('fs');
 const http = require('http');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
