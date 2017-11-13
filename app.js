@@ -86,7 +86,7 @@ app.use(passport.session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(compression());
+// app.use(compression());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
