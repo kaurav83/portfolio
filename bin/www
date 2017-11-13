@@ -8,7 +8,7 @@ var app = require('../app');
 var debug = require('debug')('express-locallibrary-tutorial:server');
 var http = require('http');
 var jsonfile = require('jsonfile');
-
+var fileVersionControl = 'version.json';
 /**
  * Get port from environment and store in Express.
  */

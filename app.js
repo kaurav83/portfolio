@@ -14,7 +14,6 @@ const http = require('http');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const server = http.createServer(app);
-const fileVersionControl = 'version.json';
 const config = require('./config');
 const uploadDir = path.join(__dirname, config.upload);
 const passport = require('passport');
