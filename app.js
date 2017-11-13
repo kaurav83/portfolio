@@ -23,19 +23,23 @@ const LocalStrategy = require('passport-local').Strategy;
 //mongodb & mongoose
 
 const mongoose = require('mongoose');
-// mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 const dev_db_url = 'mongodb://scaffold83:80963319476@ds123695.mlab.com:23695/local_library'
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
-mongoose.connect(mongoDB);
+mongoose.connect(mongoDB, {
+  useMongoClient: true,
+  user: config.db.user,
+  pass: config.db.password
+});
+
+const dbHandler = mongoose.connection;
+dbHandler.on('error', console.error.bind(console, 'MongoDB connection error'));
 
 //подключаем модели(сущности, описывающие коллекции базы данных)
 require('./models/db-close');
 require('./models/blog');
 require('./models/pic');
 require('./models/user');
-
-const dbHandler = mongoose.connection;
-dbHandler.on('error', console.error.bind(console, 'MongoDB connection error'));
 
 const ModuleUser = require('./models/user');
 const mainUser = new ModuleUser({
@@ -86,7 +90,7 @@ app.use(passport.session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-// app.use(compression());
+app.use(compression());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -124,27 +128,7 @@ app.use(function(err, req, res, next) {
 // server.listen(3000, () => console.log('Сервер работает'));
 
 // server.on('listening', function () {
-//   jsonfile
-//     .readFile(fileVersionControl, function (err, obj) {
-//       if (err) {
-//         console.log('Данные для хеширования ресурсов из version.json не прочитаны');
-//         console.log('Сервер остановлен');
-//         process.exit(1);
-//       } else {
-//         app.locals.settings = {
-//           suffix: obj.suffix,
-//           version: obj.version
-//         };
-//         console.log('Данные для хеширования ресурсов из version.json прочитаны');
-
-//         //если такой папки нет - создаем ее
-//         if (!fs.existsSync(uploadDir)) {
-//           fs.mkdirSync(uploadDir);
-//         }
-
-//         console.log('Express server started on port %s at %s', server.address().port, server.address().address);
-//       }
-//     });
+  
 // });
 
 module.exports = app;
