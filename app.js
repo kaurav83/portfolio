@@ -30,13 +30,17 @@ mongoose.Promise = global.Promise;
 const devDBurl = 'mongodb://scaffold83:80963319476@ds123695.mlab.com:23695/local_library';
 const mongoDB = process.env.MONGODB_URI || devDBurl;
 mongoose.connect(mongoDB, {
-  useMongoClient: true,
-  user: config.db.user,
-  pass: config.db.password
+  useMongoClient: true
 });
 
 const dbHandler = mongoose.connection;
-dbHandler.on('error', console.error.bind(console, 'MongoDB connection error'));
+dbHandler.on('error', function(err) {
+  console.log('connection error: ', err.message);
+});
+
+dbHandler.once('open', function callback () {
+  console.log("Connected to DB!");
+});
 
 //подключаем модели(сущности, описывающие коллекции базы данных)
 require('./models/db-close');
