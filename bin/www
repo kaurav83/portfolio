@@ -84,6 +84,7 @@ function onError(error) {
  */
 
 function onListening() {
+
     jsonfile
     .readFile(fileVersionControl, function (err, obj) {
       if (err) {
@@ -97,7 +98,6 @@ function onListening() {
         };
         console.log('Данные для хеширования ресурсов из version.json прочитаны');
 
-        //если такой папки нет - создаем ее
         if (!fs.existsSync(uploadDir)) {
           fs.mkdirSync(uploadDir);
         }
@@ -105,11 +105,4 @@ function onListening() {
         console.log('Express server started on port %s at %s', server.address().port, server.address().address);
       }
     });
-
-
-  var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
 }
