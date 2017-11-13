@@ -60,7 +60,7 @@ mainUser.save((err) => {
   console.log('User created!');
 });
 //------------------------------------------------------------
-const port = (process.env.NODE_ENV === 'production');
+const port = normalizePort(process.env.PORT);
 
 app.set('port', port);
 //----------------------------------------------------------
