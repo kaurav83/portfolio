@@ -61,7 +61,7 @@ app.use(favicon(path.join(__dirname,'public','img','favicon.ico')));
 
 app.use(helmet());
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 app.use(cookieParser());
 

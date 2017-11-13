@@ -189,17 +189,17 @@ router.get('/blog', (req, res, next) => {
     });
 });
 
-// router.get('/:id', (req, res, next) => {
-//     const Model = mongoose.model('blog');
-//     //получаем список записей в блоге из базы
-//     Model.findById(req.params.id).then(item => {
-//         // обрабатываем шаблон и отправляем его в браузер передаем в шаблон список
-//         // записей в блоге
-//         res.render('posts.pug', {
-//             item
-//         });
-//     });
-// });
+router.get('/:id', (req, res, next) => {
+    const Model = mongoose.model('blog');
+    //получаем список записей в блоге из базы
+    Model.findById(req.params.id).then(item => {
+        // обрабатываем шаблон и отправляем его в браузер передаем в шаблон список
+        // записей в блоге
+        res.render('posts.pug', {
+            item
+        });
+    });
+});
 
 router.post('/admin', isAdmin, (req, res, next) => {
     //требуем наличия заголовка, даты и текста
