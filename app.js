@@ -10,6 +10,12 @@ const morgan = require('morgan');
 const routes = require('./routes/index');
 const path = require('path');
 const http = require('http');
+//--------------------------------------------------------------------------------------
+const fs = require('fs');
+const fileVersionControl = 'version.json';
+const jsonfile = require('jsonfile');
+//-------------------------------------------------------------------------------------
+const debug = require('debug')('portfolio:server');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const server = http.createServer(app);
@@ -49,7 +55,11 @@ mainUser.save((err) => {
 
   console.log('User created!');
 });
+//------------------------------------------------------------
+const port = normalizePort(process.env.PORT || '3000');
 
+app.set('port', port);
+//----------------------------------------------------------
 app.set('views', path.join(__dirname, 'views'));
 
 app.set('view engine', 'pug');
@@ -121,11 +131,72 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+//-------------------------------------------------------------------------------------------------------------------------
+server.listen(port, () => console.log('Сервер работает'));
+server.on('error', onError);
 
-// server.listen(3000, () => console.log('Сервер работает'));
+function normalizePort(val) {
+  var port = parseInt(val, 10);
 
-// server.on('listening', function () {
-  
-// });
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
 
-module.exports = app;
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+server.on('listening', function () {
+  jsonfile
+    .readFile(fileVersionControl, function (err, obj) {
+      if (err) {
+        console.log('Данные для хеширования ресурсов из version.json не прочитаны');
+        console.log('Сервер остановлен');
+        process.exit(1);
+      } else {
+        app.locals.settings = {
+          suffix: obj.suffix,
+          version: obj.version
+        };
+        console.log('Данные для хеширования ресурсов из version.json прочитаны');
+
+        //если такой папки нет - создаем ее
+        if (!fs.existsSync(uploadDir)) {
+          fs.mkdirSync(uploadDir);
+        }
+
+        console.log('Express server started on port %s at %s', server.address().port, server.address().address);
+      }
+    });
+});
+//-----------------------------------------------------------------------------------------------------------------------
+// module.exports = app;
