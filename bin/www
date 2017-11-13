@@ -5,11 +5,9 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('express-locallibrary-tutorial:server');
+var debug = require('debug')('portfolio:server');
 var http = require('http');
-var jsonfile = require('jsonfile');
-var fileVersionControl = '../version.json';
-var fs = require('fs');
+
 /**
  * Get port from environment and store in Express.
  */
@@ -89,23 +87,4 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
-
-  jsonfile
-    .readFile(fileVersionControl, function (err, obj) {
-      if (err) {
-        console.log('Данные для хеширования ресурсов из version.json не прочитаны');
-        console.log('Сервер остановлен');
-        process.exit(1);
-      } else {
-        app.locals.settings = {
-          suffix: obj.suffix,
-          version: obj.version
-        };
-        console.log('Данные для хеширования ресурсов из version.json прочитаны');
-
-        if (!fs.existsSync(uploadDir)) {
-          fs.mkdirSync(uploadDir);
-        }
-      }
-    });
 }
