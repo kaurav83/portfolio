@@ -16,7 +16,6 @@ const MongoStore = require('connect-mongo')(session);
 const server = http.createServer(app);
 const fileVersionControl = 'version.json';
 const config = require('./config');
-const jsonfile = require('jsonfile');
 const uploadDir = path.join(__dirname, config.upload);
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
