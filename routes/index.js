@@ -153,55 +153,6 @@ router.get('/ping', (req, res) => {
     res.status(200).send('pong');
 });
 
-//old
-// router.post('/login', (req, res) => {
-// if (!req.body.username || !req.body.password) {
-//     return res.json({
-//         status: 'Укажите логин и пароль!'
-//     });
-// }
-// const Model = mongoose.model('user'),
-//     password = crypto
-//     .createHash('md5')
-//     .update(req.body.password)
-//     .digest('hex');
-
-// Model
-//     .findOne({
-//         username: req.body.username,
-//         password: password
-//     })
-//     .then(item => {
-//         console.log(item)
-//         if (!item) {
-//             res.json({
-//                 status: 'Логин или пароль введены неверно'
-//             });
-//         } else {
-//             req.session.isAdmin = true;
-//             res.json({
-//                 status: 'Авторизация прошла успешно!'
-//             })
-//         }
-//     })
-// });
-
-// router.get('/', (req, res, next) => {
-
-//     // Object.assign(obj, req.app.locals.settings);
-//     res.render('auth', {
-//         title: 'Home'
-//     });
-// });
-
-// router.get('/login', (req, res) => {
-//     let obj = {
-//         title: 'Авторизация'
-//     };
-//     Object.assign(obj, req.app.locals.settings);
-//     res.render('login', obj);
-// });
-
 router.get('/about', (req, res, next) => {
     res.render('about', {
         title: 'About'
@@ -213,12 +164,6 @@ router.get('/works', (req, res, next) => {
         title: 'Works'
     });
 });
-
-// router.get('/login', (req, res, next) => {
-//     res.render('login', {
-//         title: 'Login'
-//     })
-// });
 
 router.get('/admin', isAdmin, (req, res, next) => {
     let obj = {
@@ -244,17 +189,17 @@ router.get('/blog', (req, res, next) => {
     });
 });
 
-router.get('/:id', (req, res, next) => {
-    const Model = mongoose.model('blog');
-    //получаем список записей в блоге из базы
-    Model.findById(req.params.id).then(item => {
-        // обрабатываем шаблон и отправляем его в браузер передаем в шаблон список
-        // записей в блоге
-        res.render('posts.pug', {
-            item
-        });
-    });
-});
+// router.get('/:id', (req, res, next) => {
+//     const Model = mongoose.model('blog');
+//     //получаем список записей в блоге из базы
+//     Model.findById(req.params.id).then(item => {
+//         // обрабатываем шаблон и отправляем его в браузер передаем в шаблон список
+//         // записей в блоге
+//         res.render('posts.pug', {
+//             item
+//         });
+//     });
+// });
 
 router.post('/admin', isAdmin, (req, res, next) => {
     //требуем наличия заголовка, даты и текста
