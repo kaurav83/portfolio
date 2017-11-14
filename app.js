@@ -180,27 +180,32 @@ function onError(error) {
 }
 
 server.on('listening', function () {
-  jsonfile
-    .readFile(fileVersionControl, function (err, obj) {
-      if (err) {
-        console.log('Данные для хеширования ресурсов из version.json не прочитаны');
-        console.log('Сервер остановлен');
-        process.exit(1);
-      } else {
-        app.locals.settings = {
-          suffix: obj.suffix,
-          version: obj.version
-        };
-        console.log('Данные для хеширования ресурсов из version.json прочитаны');
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+  // jsonfile
+  //   .readFile(fileVersionControl, function (err, obj) {
+  //     if (err) {
+  //       console.log('Данные для хеширования ресурсов из version.json не прочитаны');
+  //       console.log('Сервер остановлен');
+  //       process.exit(1);
+  //     } else {
+  //       app.locals.settings = {
+  //         suffix: obj.suffix,
+  //         version: obj.version
+  //       };
+  //       console.log('Данные для хеширования ресурсов из version.json прочитаны');
 
-        //если такой папки нет - создаем ее
-        if (!fs.existsSync(uploadDir)) {
-          fs.mkdirSync(uploadDir);
-        }
+  //       //если такой папки нет - создаем ее
+  //       if (!fs.existsSync(uploadDir)) {
+  //         fs.mkdirSync(uploadDir);
+  //       }
 
-        console.log('Express server started on port %s at %s', server.address().port, server.address().address);
-      }
-    });
+  //       console.log('Express server started on port %s at %s', server.address().port, server.address().address);
+  //     }
+  //   });
 });
 //-----------------------------------------------------------------------------------------------------------------------
 // module.exports = app;
