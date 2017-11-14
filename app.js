@@ -27,8 +27,8 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-const devDBurl = 'mongodb://scaffold83:80963319476@ds123695.mlab.com:23695/local_library';
-const mongoDB = process.env.MONGODB_URI || devDBurl;
+// const devDBurl = 'mongodb://scaffold83:80963319476@ds123695.mlab.com:23695/local_library';
+const mongoDB = process.env.MONGODB_URI || 'mongodb://scaffold83:80963319476@ds123695.mlab.com:23695/local_library';
 mongoose.connect(mongoDB, {
   useMongoClient: true
 });
