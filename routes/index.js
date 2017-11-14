@@ -184,7 +184,7 @@ router.get('/blog', (req, res, next) => {
         // Object.assign(obj, { items: items });
         res.render('blog', {
             items,
-            user: req.user
+            // user: req.user
         });
     });
 });
