@@ -23,11 +23,7 @@ router.post('/', function (req, res) {
     from: `"${req.body.name}" <${req.body.email}>`,
     to: config.mail.smtp.auth.user,
     subject: config.mail.subject,
-    text: req
-    .body
-    .text
-    .trim()
-    .slice(0, 500) + `\n Отправлено с: <${req.body.email}>`
+    text: req.body.text.trim().slice(0, 500) + `\n Отправлено с: <${req.body.email}>`
   };
   //отправляем почту
   transporter.sendMail(mailOptions, function (error, info) {
