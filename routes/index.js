@@ -186,6 +186,7 @@ router.get('/blog', (req, res, next) => {
             items,
             // user: req.user
         });
+        console.log(items);
     });
 });
 
@@ -198,6 +199,7 @@ router.get('/:id', (req, res, next) => {
         res.render('posts.pug', {
             item
         });
+        console.log(item);
     });
 });
 
