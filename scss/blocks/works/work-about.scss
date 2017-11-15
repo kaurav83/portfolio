@@ -5,19 +5,18 @@
     background-repeat: no-repeat;
     height: 100%;
     min-height: 43.75rem;
-<<<<<<< HEAD
-
     @include tablets {
-        background-image: none;
-        background: linear-gradient(to right, rgba(69, 127, 202, 1), rgba(86, 145, 200, 1));
+        & {
+            background-image: none;
+            background: linear-gradient(to right, rgba(69, 127, 202, 1), rgba(86, 145, 200, 1));
+        }
     }
-
-=======
-    @include tablets {
-        background-image: none;
-        background: linear-gradient(to right, rgba(69, 127, 202, 1), rgba(86, 145, 200, 1))
+    @include phones {
+        & {
+            background-image: none;
+            background: linear-gradient(to right, rgba(69, 127, 202, 1), rgba(86, 145, 200, 1));
+        }
     }
->>>>>>> a23eb69fc14b5402d985b5bdae102a63425c7fac
     &__container {
         width: 100%;
     }
@@ -34,17 +33,13 @@
             max-width: 60%;
         }
     }
-
-
     &__opinion-container {
         padding: 0 10%;
         margin: 3rem 0;
     }
     &__opinion-list {
-        display: flex;
-        // flex-wrap: wrap;
+        display: flex; // flex-wrap: wrap;
         justify-content: center;
-
         @include tablets {
             flex-direction: column;
         }
@@ -73,7 +68,6 @@
     }
     &__opinion-photo {
         border-radius: 100%;
-
         @include phones {
             align-self: center;
         }
@@ -84,7 +78,6 @@
         // width: 100%;
         // flex-direction: column;
         // justify-content: flex-start;
-        
     }
     &__opinion-person {
         margin-left: 1rem;
@@ -98,11 +91,9 @@
         color: $title-color;
         font-family: $regular-font-family1;
     }
-
     &__feedback-container {
         color: #fff;
     }
-
     &__down-arrow {
         text-align: center;
         margin: 3rem 0;

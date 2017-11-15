@@ -2,15 +2,12 @@
     height: 37.5rem;
     overflow: hidden;
     position: relative;
-
     @include tablets {
         height: 30.5rem;
     }
-
     @include phones {
         height: 100vh;
     }
-
     &__title {
         position: absolute;
         top: 50%;
@@ -29,8 +26,7 @@
         right: 0;
         transform: translateY(0);
         img {
-            width: 100vw;
-            // max-width: 1900px;
+            width: 100vw; // max-width: 1900px;
             min-height: 62.5rem;
             background-position: center center;
             background-size: cover;
@@ -38,41 +34,24 @@
                 display: none;
             }
         }
-
         @include tablets {
             & {
                 position: absolute;
                 top: 0;
                 left: 0;
                 right: 0;
-<<<<<<< HEAD
                 background: linear-gradient(to right, rgba(41, 128, 185, 1), rgba(44, 62, 80, 1));
-=======
-                // background-image: url('../img/bg/heroPortfolio2.jpg');
-                // background-size: cover;
-                // background-position: center center;
-                // background-repeat: no-repeat;
->>>>>>> a23eb69fc14b5402d985b5bdae102a63425c7fac
                 height: 40rem;
                 background: linear-gradient(to right, rgba(41, 128, 185, 1), rgba(44, 62, 80, 1))
             }
         }
-
         @include phones {
             & {
                 position: absolute;
                 top: 0;
                 left: 0;
-<<<<<<< HEAD
                 right: 0;
                 background: linear-gradient(to right, rgba(41, 128, 185, 1), rgba(44, 62, 80, 1));
-=======
-                // right: 0;
-                // background-image: url('../img/bg/heroPortfolio2.jpg');
-                // background-size: cover;
-                // background-position: center center;
-                // background-repeat: no-repeat;
->>>>>>> a23eb69fc14b5402d985b5bdae102a63425c7fac
                 height: 100vh;
                 transform: translateY(0);
                 background: linear-gradient(to right, rgba(41, 128, 185, 1), rgba(44, 62, 80, 1))
@@ -93,9 +72,7 @@
         top: 1.875rem;
         left: 0;
         width: 100%;
-        align-items: center;
-
-        // @include tablets {
+        align-items: center; // @include tablets {
         //     display: none;
         // }
     }
@@ -103,7 +80,6 @@
 
 .navigation {
     margin: 0 10%;
-    
     @include tablets {
         display: none;
     }
