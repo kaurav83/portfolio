@@ -5,6 +5,10 @@
     background-repeat: no-repeat;
     height: 100%;
     min-height: 43.75rem;
+    @include tablets {
+        background-image: none;
+        background: linear-gradient(to right, rgba(69, 127, 202, 1), rgba(86, 145, 200, 1))
+    }
     &__container {
         width: 100%;
     }
