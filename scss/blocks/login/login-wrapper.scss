@@ -1,5 +1,12 @@
 .login-wrapper {
     max-width: inherit;
+
+    @include tablets {
+        & {
+            height: 100vh;
+            background: linear-gradient(to right, rgba(41, 128, 185, 1), rgba(44, 62, 80, 1))
+        }
+    }
     &__img {
         background-position: center center;
         background-size: cover;
@@ -13,6 +20,12 @@
         width: 100%;
         margin: 0 auto;
         height: 100vh;
+
+        @include tablets {
+            & {
+                display: none;
+            }
+        }
     }
     // background-image: url(../img/bg/heroPortfolio2.jpg);
 }

@@ -11,4 +11,11 @@
     max-width: inherit;
     margin: 0 auto;
     height: 100vh;
+
+    @include tablets {
+        & {
+            background-image: none;
+            background: linear-gradient(to right, rgba(41, 128, 185, 1), rgba(44, 62, 80, 1))
+        }
+    }
 }
