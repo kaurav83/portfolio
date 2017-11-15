@@ -13,9 +13,11 @@
                 li.menu__item.menu__item--mobile
                     a(href=`${item.hrefRouter}`).menu__link=item.titleRouter
             if (!user) 
-                    li.menu__item.menu__item--login
-                        a(href="/login").menu__link Войти
-                
-            if (user)
-                li.menu__item.menu__item--register
+                li.menu__item.menu__item--mobile
+                    a(href="/login").menu__link Войти
+                li.menu__item.menu__item--mobile
                     a(href="/register").menu__link Регистрация
+            if (user)
+                a.logout-user(href="/logout") Выйти
+                span.logout-user-from из
+                p.loged-user #{user.username}

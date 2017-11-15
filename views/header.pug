@@ -13,8 +13,8 @@ header.section.hero
                 each item in [{'titleRouter': 'Мои работы', 'hrefRouter': '/works' }, {'titleRouter': 'Блог', 'hrefRouter': '/blog' }, {'titleRouter': 'Обо мне', 'hrefRouter': '/about' }]
                     li.menu__item
                         a(href=`${item.hrefRouter}`).menu__link=item.titleRouter
-                li.menu__item.menu__item--admin
-                    a(href="/to-admin").menu__link Служебный
+                //- li.menu__item.menu__item--admin
+                //-     a(href="/to-admin").menu__link Служебный
                 if (!user) 
                     li.menu__item.menu__item--login
                         a(href="/login").menu__link Войти

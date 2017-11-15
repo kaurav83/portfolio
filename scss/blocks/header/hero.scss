@@ -45,10 +45,7 @@
                 top: 0;
                 left: 0;
                 right: 0;
-                background-image: url('../img/bg/heroPortfolio2.jpg');
-                background-size: cover;
-                background-position: center center;
-                background-repeat: no-repeat;
+                background: linear-gradient(to right, rgba(41, 128, 185, 1), rgba(44, 62, 80, 1));
                 height: 40rem;
             }
         }
@@ -59,10 +56,7 @@
                 top: 0;
                 left: 0;
                 right: 0;
-                background-image: url('../img/bg/heroPortfolio2.jpg');
-                background-size: cover;
-                background-position: center center;
-                background-repeat: no-repeat;
+                background: linear-gradient(to right, rgba(41, 128, 185, 1), rgba(44, 62, 80, 1));
                 height: 100vh;
                 transform: translateY(0);
             }
