@@ -6,6 +6,6 @@ section.section.map
                 | Контакты
                 +subtitle
             ul.feedback__list
-                each link in [{"hr": "skype:puga.vitaliy?call", "val":"Vitaliy Puga", "mod":"--skype"}, {"hr": 'mailto:puga.vitaliy@gmail.com', "val": "puga.vitaliy@gmail.com", "mod":"--email"}, {"hr": 'tel:+380995086829', "val": "0995086829", "mod":"--phone"}, {"val": "Одесса, пос. Котовского", "mod":"--address"}]
+                each link in [{"hr": "skype:PugaVitaliyJob?call", "val":"Vitaliy Puga", "mod":"--skype"}, {"hr": 'mailto:puga.vitaliy@gmail.com', "val": "puga.vitaliy@gmail.com", "mod":"--email"}, {"hr": 'tel:+380995086829', "val": "0995086829", "mod":"--phone"}, {"val": "Одесса, пос. Котовского", "mod":"--address"}]
                     li.feedback__item
                         a(href=`${link.hr}` class="feedback__link feedback__link" + `${link.mod}`)=link.val 
