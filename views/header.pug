@@ -8,9 +8,6 @@ header.section.hero
                 li.socials__item
                     a(href=`${item.href}` class=`socials__link socials__link--${item.socials}`)
                         //- embed(src=`img/icons/svg/${item}.svg` width="20" height="20")
-				li.socials__item
-					a (href="https://freelancehunt.com/freelancer/kaurav83.html?r=WkD4L" target="_blank" title="Фриланс просто")
-						img(src="https://freelancehunt.com/static/images/buttons/9.gif" alt="Фриланс работа на Freelancehunt.com" width="88" height="31")
         nav.navigation
             ul.menu
                 each item in [{'titleRouter': 'Мои работы', 'hrefRouter': '/works' }, {'titleRouter': 'Блог', 'hrefRouter': '/blog' }, {'titleRouter': 'Обо мне', 'hrefRouter': '/about' }]
