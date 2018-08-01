@@ -2164,16 +2164,32 @@ html, body {
       .slider__preview {
         max-height: 30vh; } }
   .slider__btn-cover {
-    position: absolute;
-    background: rgba(205, 187, 170, 0.6);
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0; }
+    width: 100%;
+    background: #0e4061;
+    border: .0625rem solid #75b5d9;
+  }
+  .slider__btn-cover:hover {
+    opacity: .9;
+    transition: .3s ease-out;
+    -webkit-transition: .3s ease-out;
+    -moz-transition: .3s ease-out;
+    -ms-transition: .3s ease-out;
+    -o-transition: .3s ease-out;
+}
+  @media screen and (min-width: 320px) {
+      .slider__btn-cover {
+        padding: 2rem;
+      }
+  }
+  @media screen and (min-width: 1200px) {
+    .slider__btn-cover {
+      padding: 2.5rem;
+    }
+  }
     .slider__btn-cover--down:after {
       content: '\f078';
       font-family: FontAwesome;
-      font-size: 3rem;
+      font-size: 2rem;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -2185,7 +2201,7 @@ html, body {
     .slider__btn-cover--up:after {
       content: '\f077 ';
       font-family: FontAwesome;
-      font-size: 3rem;
+      font-size: 2rem;
       position: absolute;
       top: 50%;
       left: 50%;
